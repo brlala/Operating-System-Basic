@@ -190,14 +190,14 @@ Physical Address identifies a physical location of required data in a memory. Th
 ![difference logical address](https://i.imgur.com/Y2w5Lxl.png)
 
 ### Paging in Operating System
-Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory. This scheme permits the physical address space of a process to be non – contiguous.
-[paging](https://i.imgur.com/CECYavu.png)
+Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory. This scheme permits the physical address space of a process to be non – contiguous.  
+![paging](https://i.imgur.com/CECYavu.png)  
 1. CPU allocates a logical address which have page number and a displacement
 2. page number is the entry in the Page Table, which will translate to frame number.
 3. Frame number + displacement(offset) will be the location in the physical memory
 
-Page accessing speed will be largely affected by the page table access speed. Some will frequently be referred, hence we introduced another hardware called TLB(Translation look aside buffer)
-![paging+TLB](https://i.imgur.com/682e9E8.png)
+Page accessing speed will be largely affected by the page table access speed. Some will frequently be referred, hence we introduced another hardware called TLB(Translation look aside buffer)  
+![paging+TLB](https://i.imgur.com/682e9E8.png)  
 1. Some of the page number will be inside TLB. If TLB hit(found) it will use it directly.
 2. If TLB miss(fail) it will then go to the page table.
 
@@ -205,7 +205,7 @@ P/S: If the item is not inside the pagetable, there will be a Page fault and the
 Effective access time = hit ratio *(c+m) + miss ratio*(c+m+m)  
 
 ### Multi Level Paging and Inverted Page Table
-![multi level paging](https://i.imgur.com/VCUnAnB.png)
+![multi level paging](https://i.imgur.com/VCUnAnB.png)  
 Multi level paging involves breaking P1 and P2 such that the table can be smaller and non-contiguous
 1. CPU allocates a logical address which have p1+p2+offset
 2. MMU look up P1 for the next page table
