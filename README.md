@@ -149,8 +149,8 @@ Analogy: Mutex is like a key when entering a toilet, semaphore is like there's a
 Solution to sharing of items: semaphore using a shared memory space, message queue, callback 
 
 ### Priority Inversion
-L - Low Priority, M - Medium Priority, H - High Priority, CS - Critical Section
-L is running in CS ; H also needs to run in CS ; H waits for L to come out of CS ; M interrupts L and starts running ; M runs till completion and relinquishes control ; L resumes and starts running till the end of CS ; H enters CS and starts running.
+L - Low Priority, M - Medium Priority, H - High Priority, CS - Critical Section  
+L is running in CS ; H also needs to run in CS ; H waits for L to come out of CS ; M interrupts L and starts running ; M runs till completion and relinquishes control ; L resumes and starts running till the end of CS ; H enters CS and starts running.  
 Note that neither L nor H share CS with M. But M delayed the execution of L and H. This is the scenario where a lower priority item affects the higher priority ones.
 
 ## Deadlocks
