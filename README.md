@@ -94,10 +94,13 @@ Processor Affinity means a processes has an affinity for the processor on which 
 #### Multithreaded Multicore Processors
 When processor accesses memory then it spends a significant amount of time waiting for the data to become available. This situation is called MEMORY STALL. It occurs for various reasons such as cache miss, which is accessing the data that is not in the cache memory. Therefore if one thread stalls while waiting for the memory, core can switch to another thread. Similar to 2 queues into 1 core.
 1. Coarse-Grained Multithreading - The cost of switching between threads is high as the instruction pipeline must be terminated before the other thread can begin execution on the processor core.
+![coarse_grained_multithreading](https://user-images.githubusercontent.com/8999633/113472809-1993f980-9498-11eb-965c-cd6daf5468ee.png)
 2. Fine-Grained Multithreading - fine tuned. includes logic for switching between threads
+![fine_gradined_multithreading](https://user-images.githubusercontent.com/8999633/113472801-0ed96480-9498-11eb-9ba7-12c89b91f0c5.png)
 
 #### Virtualization 
 Most virtualized environments have one host operating system and many guest operating systems. Running multiple VM on one main VM. Separating CPU power to multiple small environment
+
 
 ## Thread in Operating System
 A thread is a path of execution within a process. A process can contain multiple threads. A thread is also known as lightweight process. The idea is to achieve parallelism by dividing a process into multiple threads. The primary difference is that threads within the same process run in a shared memory space, while processes run in separate memory spaces.
