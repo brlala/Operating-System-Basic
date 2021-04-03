@@ -152,9 +152,12 @@ Analogy: Mutex is like a key when entering a toilet, semaphore is like there's a
 Solution to sharing of items: semaphore using a shared memory space, message queue, callback 
 
 ### Priority Inversion
+![LS CS priority](https://user-images.githubusercontent.com/8999633/113473062-d2a70380-9499-11eb-8ac3-f1e756c4c897.png)
+
 L - Low Priority, M - Medium Priority, H - High Priority, CS - Critical Section  
 L is running in CS ; H also needs to run in CS ; H waits for L to come out of CS ; M interrupts L and starts running ; M runs till completion and relinquishes control ; L resumes and starts running till the end of CS ; H enters CS and starts running.  
-Note that neither L nor H share CS with M. But M delayed the execution of L and H. This is the scenario where a lower priority item affects the higher priority ones.
+Note that neither L nor H share CS with M. But M delayed the execution of L and H. This is the scenario where a lower priority item affects the higher priority ones.  
+Solution: Using priority inheritance, when a low priority task with mutex is pre-empted by a higher priority task which requires mutex, it will rise to the same priority as the task that preempted it.
 
 ## Deadlocks
 Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.  
